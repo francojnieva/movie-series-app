@@ -13,7 +13,7 @@
         @apply w-[100%] p-1.5 rounded-md text-white outline-none text-sm bg-none border border-gray-500 bg-[#010409] mt-2 lg:text-base
     }
 
-    .input-submit {
+    .btn-submit {
         @apply cursor-pointer text-sm py-2 px-4 mt-4 bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] rounded-md font-semibold lg:text-base shadow-lg shadow-[#8E2DE2]/20
     }
 }

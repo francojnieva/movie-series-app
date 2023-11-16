@@ -7,7 +7,8 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    addDynamicIconSelectors()
+    addDynamicIconSelectors(),
+    require("daisyui")
   ],
 }
 
