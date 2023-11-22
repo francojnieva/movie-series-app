@@ -13,7 +13,7 @@
 </head>
 <body>
     <section>
-        <aside class="w-56 absolute top-0 flex flex-col -left-full lg:left-0 justify-between bg-[#1a0a27] h-full pb-16 px-4 lg:py-4 z-50" id="sidebar">
+        <aside class="w-56 fixed top-0 flex flex-col -left-full lg:left-0 justify-between bg-[#1a0a27] h-full pb-16 px-4 lg:py-4 z-50 transition-all" id="sidebar">
             <div>
                 <div class="flex justify-center mt-4">
                     <img src="../assets/logo-app.png" class="w-12 rounded-full" alt="logo de la aplicación">
@@ -22,7 +22,7 @@
                     <p class="text-gray-400 font-semibold mb-3">Menú</p>
                     <div class="space-y-4 flex flex-col text-white">
                         <a href="./dashboard.html"><img class="icon-[ic--baseline-home] text-lg mr-2" role="img" aria-hidden="true" />Inicio</a>
-                        <a href="#"><img class="icon-[ic--outline-movie] text-lg mr-2" role="img" aria-hidden="true" />Películas</a>
+                        <a href="../pages/dashboard.html"><img class="icon-[ic--outline-movie] text-lg mr-2" role="img" aria-hidden="true" />Películas</a>
                         <a href="#"><img class="icon-[ic--baseline-ondemand-video] text-lg mr-2" role="img" aria-hidden="true" />Series</a>
                     </div>
                 </div>
@@ -33,29 +33,38 @@
             </div>
         </aside>
         <!-- MENÚ MÓVIL -->
-        <nav class="fixed bottom-0 w-full bg-[#1a0a27] rounded-t-lg flex justify-end py-2 px-4 lg:hidden">
+        <nav class="fixed bottom-0 w-full bg-[#1a0a27] z-50 rounded-t-lg flex justify-end py-2 px-4 lg:hidden">
             <button id="btnMenu">
                 <img id="imgMenu" class="icon-[material-symbols--menu] text-[1.5rem] text-white" role="img" aria-hidden="true" />
                 <img id="imgCloseMenu" class="icon-[ic--baseline-close] text-white hidden text-[1.5rem]" role="img" aria-hidden="true" />
             </button>
         </nav>
-        <main class="p-3 lg:pl-56 bg-[#0c0511] h-screen dark:bg-slate-100">
-            <section class=" lg:p-3 lg:flex flex-row-reverse items-center justify-between">
+        <main class="lg:pl-56 w-full bg-[#0c0511] min-h-screen pb-8 dark:bg-[#F5F5F5]">
+            <section class="p-3 fixed z-40 bg-[#1a0a27] w-full rounded-b-lg lg:flex lg:bg-[#0c0511] dark:bg-[#1a0a27] lg:rounded-none">
                 <div class="flex justify-between items-center mb-3">
                     <img src="../assets/logo-app.png" class="w-7 rounded-full lg:hidden" alt="logo de la aplicación">
                     <button id="btnChangeTheme">
                         <img id="imgSun" class="icon-[material-symbols-light--sunny] text-yellow-400 text-2xl" role="img" aria-hidden="true" />
-                        <img id="imgMoon" class="icon-[material-symbols-light--dark-mode] hidden text-2xl text-slate-200 dark:text-gray-800" role="img" aria-hidden="true" />
+                        <img id="imgMoon" class="icon-[material-symbols-light--dark-mode] hidden text-2xl text-slate-200 dark:text-white" role="img" aria-hidden="true" />
                     </button>
                 </div>
-                <div>
-                    <form action="#" class="relative">
-                        <img class="icon-[material-symbols--search] absolute top-2 left-2 text-lg text-white dark:text-black" role="img" aria-hidden="true" />
-                        <input type="search" name="search" id="search" class="w-full bg-none ps-7 py-1 outline-none rounded-lg bg-[#0c0511] border border-[#E61D6E] text-white dark:bg-slate-100 dark:text-black" placeholder="Buscar" autocomplete="off">
-                    </form>
-                </div>
+                <form action="#" class="relative lg:ml-4">
+                    <img class="icon-[material-symbols--search] absolute top-2 left-2 text-lg text-white dark:text-black" role="img" aria-hidden="true" />
+                    <input type="search" name="search" id="search" class="w-full bg-none ps-7 py-1 outline-none rounded-lg bg-[#0c0511] border border-[#E61D6E] text-white dark:bg-slate-100 dark:text-black" placeholder="Buscar" autocomplete="off">
+                </form>
             </section>
+            <section id="movies-container" class="flex items-center justify-evenly flex-wrap pt-32 lg:pt-24 gap-2"></section>
         </main>
+        <footer class="bg-[#0c0511] px-3 lg:pl-56 pb-12 lg:pb-3 dark:bg-[#F5F5F5]">
+            <div class="flex justify-between items-center">
+                <small class="text-white font-medium text-xs lg:px-3 dark:text-black">Desarrollado por Franco Javier Nieva</small>
+                <div>
+                    <a href="https://github.com/francojnieva" target="_blank"><img class="icon-[ph--github-logo-fill] text-white text-xl dark:text-black" role="img" aria-hidden="true" /></a>
+                    <a href="https://www.linkedin.com/in/francojnieva/" target="_blank"><img class="icon-[ph--linkedin-logo-fill] text-white text-xl dark:text-black" role="img" aria-hidden="true" /></a>
+                    <a href="mailto:franco97nieva@gmail.com" target="_blank"></a>
+                </div>
+            </div>
+        </footer>
         
     </section>
     <script src="../js/app.js"></script>
