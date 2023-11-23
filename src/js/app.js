@@ -28,6 +28,7 @@ const moviesTop = document.querySelector("#moviesTop")
 const moviesPopular = document.querySelector("#moviesPopular")
 const moviesUpcoming = document.querySelector("#moviesUpcoming")
 const titleCategory = document.querySelector("#titleCategory")
+const searchInput = document.querySelector("#searchInput")
 
 const urlMoviePopular = "https://api.themoviedb.org/3/movie/popular"
 const urlMovieTopRated = "https://api.themoviedb.org/3/movie/top_rated"
@@ -122,7 +123,7 @@ function ShowInfoMovie(movie) {
     const movieDetails = document.createElement("div")
     movieDetails.innerHTML = `
         <div class="flex flex-col items-center mt-3 lg:flex-row lg:px-6 lg:pt-4">
-            <img src="${imageUrl}" alt="${title}" class="w-40 mb-4 lg:w-52">
+            <img src="${imageUrl}" alt="${title}" class="w-40 mb-4 lg:w-52 xl:w-64">
             <div class="space-y-3 px-5 text-white dark:text-gray-900">
                 <h2 class="text-2xl font-bold lg:text-3xl">${title}</h2>
                 <p class="text-md ">${overview}</p>
