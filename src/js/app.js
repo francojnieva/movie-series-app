@@ -24,8 +24,14 @@ btnChangeTheme.addEventListener("click", () => {
 
 // MOVIES - API
 const moviesContainer = document.querySelector("#movies-container")
+const moviesTop = document.querySelector("#moviesTop")
+const moviesPopular = document.querySelector("#moviesPopular")
+const moviesUpcoming = document.querySelector("#moviesUpcoming")
+const titleCategory = document.querySelector("#titleCategory")
 
-const url = "https://api.themoviedb.org/3/movie/popular"
+const urlMoviePopular = "https://api.themoviedb.org/3/movie/popular"
+const urlMovieTopRated = "https://api.themoviedb.org/3/movie/top_rated"
+const urlMovieUpcoming = "https://api.themoviedb.org/3/movie/upcoming"
 const apiKey = ''
 const options = {
   method: 'GET',
@@ -46,7 +52,6 @@ async function getMovies(url, options, totalPages) {
       }
       const data = await response.json()
       const movies = data.results
-
     movies.forEach((movie) => {
       const { title, poster_path, vote_average, release_date } = movie
       const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`
@@ -96,7 +101,18 @@ async function getTotalPages(url, options) {
   }
 }
 
-getTotalPages(url, options)
+getTotalPages(urlMoviePopular, options)
+
+function changeCategory(element, title, category, url, options) {
+  element.addEventListener('click', () => {
+    title.textContent = `${category}`
+    moviesContainer.innerHTML = ''
+    getTotalPages(url, options)
+  })
+}
+
+changeCategory(moviesTop, titleCategory , 'Top Ranking', urlMovieTopRated, options)
+changeCategory(moviesUpcoming, titleCategory , 'Estrenos', urlMovieUpcoming, options)
 
 function ShowInfoMovie(movie) {
     moviesContainer.innerHTML = ''
@@ -105,10 +121,9 @@ function ShowInfoMovie(movie) {
   
     const movieDetails = document.createElement("div")
     movieDetails.innerHTML = `
-        <a href="../pages/dashboard.html"><img id="btnBack" class="icon-[material-symbols--arrow-circle-left-rounded] text-[#E61D6E] text-3xl ml-3" role="img" aria-hidden="true" /></a>
-        <div class="flex flex-col items-center lg:flex-row lg:px-6 lg:pt-4">
+        <div class="flex flex-col items-center mt-3 lg:flex-row lg:px-6 lg:pt-4">
             <img src="${imageUrl}" alt="${title}" class="w-40 mb-4 lg:w-52">
-            <div class="space-y-3 px-5 text-white">
+            <div class="space-y-3 px-5 text-white dark:text-gray-900">
                 <h2 class="text-2xl font-bold lg:text-3xl">${title}</h2>
                 <p class="text-md ">${overview}</p>
                 <p class="text-md font-bold ">Año: ${release_date.split('-')[0]}</p>

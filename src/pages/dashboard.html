@@ -9,7 +9,7 @@
      <!-- TAILWINDCSS -->
      <link href="../css/output.css" rel="stylesheet">
      <!-- TITLE -->
-    <title>Películas y Series</title>
+    <title>Películas</title>
 </head>
 <body>
     <section>
@@ -21,14 +21,14 @@
                 <div class="mt-7">
                     <p class="text-gray-400 font-semibold mb-3">Menú</p>
                     <div class="space-y-4 flex flex-col text-white">
-                        <a href="./dashboard.html"><img class="icon-[ic--baseline-home] text-lg mr-2" role="img" aria-hidden="true" />Inicio</a>
-                        <a href="../pages/dashboard.html"><img class="icon-[ic--outline-movie] text-lg mr-2" role="img" aria-hidden="true" />Películas</a>
-                        <a href="#"><img class="icon-[ic--baseline-ondemand-video] text-lg mr-2" role="img" aria-hidden="true" />Series</a>
+                        <a href="./dashboard.html" id="moviesPopular" class="cursor-pointer font-medium"><img class="icon-[ic--outline-movie] text-lg mr-2" role="img" aria-hidden="true" />Populares</a>
+                        <a id="moviesTop" class="cursor-pointer font-medium"><img class="icon-[material-symbols--social-leaderboard-outline] text-lg mr-2" role="img" aria-hidden="true" />Top Ranking</a>
+                        <a id="moviesUpcoming" class="cursor-pointer font-medium"><img class="icon-[ic--baseline-movie-filter] text-lg mr-2" role="img" aria-hidden="true" />Estrenos</a>
                     </div>
                 </div>
             </div>
             <div>
-                <a href="../index.html" class="text-white"><img class="icon-[material-symbols--logout] text-lg mr-2" role="img" aria-hidden="true" />Cerrar sesión</a>
+                <a href="../index.html" class="text-white font-medium py-2 px-4 rounded-lg bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0]"><img class="icon-[material-symbols--logout] text-lg mr-2" role="img" aria-hidden="true" />Cerrar sesión</a>
             </div>
             </div>
         </aside>
@@ -53,7 +53,9 @@
                     <input type="search" name="search" id="search" class="w-full bg-none ps-7 py-1 outline-none rounded-lg bg-[#0c0511] border border-[#E61D6E] text-white dark:bg-slate-100 dark:text-black" placeholder="Buscar" autocomplete="off">
                 </form>
             </section>
-            <section id="movies-container" class="flex items-center justify-evenly flex-wrap pt-32 lg:pt-24 gap-2"></section>
+            <h1 id="titleCategory" class="text-white font-bold pt-28 lg:pt-16 px-3 xl:text-3xl dark:text-gray-900">Populares</h1>
+            <section id="movies-container" class="flex items-center justify-evenly flex-wrap pt-5 gap-2">
+            </section>
         </main>
         <footer class="bg-[#0c0511] px-3 lg:pl-56 pb-12 lg:pb-3 dark:bg-[#F5F5F5]">
             <div class="flex justify-between items-center">
