@@ -4,17 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Franco Javier Nieva">
-    <meta name="description" content="Inicia sesión para disfrutar de las películas y series.">
+    <meta name="description" content="Inicia sesión para conocer las películas las populares, mejor clasificadas y mucho más.">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./assets/logo-app.png" type="image/x-icon">
     <!-- TAILWINDCSS -->
     <link href="./css/output.css" rel="stylesheet">
     <!-- TITLE -->
     <title>Iniciar Sesión</title>
 </head>
-<body>
-    
-
-    
+<body class="bg-[#010409]">
+    <main class="relative h-screen" id="main">
+        <img src="./assets/logo-app.png" class="w-8 absolute right-2 mt-2 rounded-full lg:w-10" alt="logo de la aplicación">
+        <section class="w-full flex items-center">
+            <div class="w-36 h-screen md:w-56 lg:w-96 xl:w-[30rem]">
+                <img src="./assets/background-movie.jpg" class="h-full object-cover" alt="banner de la aplicación">
+            </div>
+            <div class="w-full flex justify-center">
+                <form id="submitForm" class="text-white p-3 space-y-4 lg:w-[60%] xl:w-[45%]">
+                    <h1 class="text-2xl text-center font-bold lg:text-3xl">Iniciar sesión</h1>
+                    <div>
+                        <label for="email" class="label-form">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" class="input-form" placeholder="Ingresa tu correo electrónico" autocomplete="off" required>
+                        <p class="text-[.7rem] text-red-600 font-medium mt-1" id="errorEmail"></p>
+                    </div>
+                    <div>
+                        <label for="password" class="label-form">Contraseña:</label>
+                        <div class="relative">
+                            <input type="password" name="password" id="password" class="input-form" placeholder="Ingresa tu contraseña" autocomplete="off" required maxlength="25">
+                            <img id="seePassword" class="icon-[material-symbols--visibility-off-outline] absolute top-4 right-2 lg:top-5" role="img" aria-hidden="true" />
+                            <img id="notSeePassword" class="icon-[material-symbols--visibility-outline] hidden absolute top-4 right-2 lg:top-5" role="img" aria-hidden="true" />
+                        </div>
+                        <p class="text-[.7rem] text-red-600 font-medium mt-1" id="errorPassword"></p>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="btn-submit flex items-center">Iniciar sesión</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="flex justify-between items-center p-3 text-white">
+        <small class="text-[.6rem] lg:text-[.8rem]">Desarrollado por Franco Javier Nieva</small>
+        <div class="flex space-x-4">
+            <a href="https://github.com/francojnieva" target="_blank"><img class="icon-[lucide--github] xl:text-[1.2rem]" role="img" aria-hidden="true" /></a>
+            <a href="https://www.linkedin.com/in/francojnieva/" target="_blank"><img class="icon-[lucide--linkedin] xl:text-[1.2rem]" role="img" aria-hidden="true" /></a>
+            <a href="mailto:franco97nieva@gmail.com" target="_blank"><img class="icon-[lucide--mail] xl:text-[1.2rem]" role="img" aria-hidden="true" /></a>
+        </div>
+    </footer>
     <!-- JS -->
-    <script src="./js/app.js"></script>
+    <script src="./js/validation-login.js"></script>
 </body>
 </html>
